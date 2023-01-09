@@ -27,9 +27,9 @@ items:[itemSchema]
 const Item=mongoose.model("Item",itemSchema);
 const List=mongoose.model("List",listSchema);
 //creating items
-const item1=new Item({name:"Complete WebD"});
-const item2=new Item({name:"Watch Cricket MAtch"});
-const item3=new Item({name:"Play with Friends"});
+const item1=new Item({name:"Add the Items in the list you want to do today and it will stay here till you delete it"});
+const item3=new Item({name:"Hope you Like it !!"});
+const item2=new Item({name:"Created with ❤️ by Sunny Das"});
 const defaultItems=[item1,item2,item3];
 //routing 
 app.get("/",function(req,res){
@@ -133,7 +133,10 @@ app.post("/delete",function(req,res){
    }
  
 });
-
+app.get("/about", function(req, res){
+   res.render("about");
+ });
+ 
 //starting the server 
 app.listen( process.env.PORT || 4444,function()
 {
